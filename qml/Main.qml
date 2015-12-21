@@ -144,7 +144,7 @@ MainView {
                     id: news
                     iconName: "stock_video"
                     onTriggered: {
-                        webview.url = "http://news.orf.at/"
+                        webview.url = "http://news.orf.at/m/"
                     }
                     text: qsTr("News")
                 },
@@ -153,7 +153,7 @@ MainView {
                     iconName: "flash-on"
                     iconSource: Qt.resolvedUrl("icons/weather.svg")
                     onTriggered: {
-                        webview.url = "http://wetter.orf.at/"
+                        webview.url = "http://wetter.orf.at/m/"
                     }
                     text: qsTr("Wetter")
                 },
@@ -171,7 +171,7 @@ MainView {
                     iconName: "stock_video"
                     iconSource: Qt.resolvedUrl("icons/tv.svg")
                     onTriggered: {
-                        webview.url = "http://tv.orf.at/"
+                        webview.url = "http://tv.orf.at/m/"
                     }
                     text: qsTr("TV")
                 },
