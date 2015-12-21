@@ -1,0 +1,15 @@
+{
+    "name": "orf-total.peter-bittner",
+    "description": "Alle ORF Angebote in einer WebApp. Ö3, FM4, Radio, Fernsehen, News, Kundendienst.",
+    "architecture": "all",
+    "title": "ORF total",
+    "hooks": {
+        "orf-total": {
+            "apparmor": "orf-total.apparmor",
+            "desktop": "orf-total.desktop"
+        }
+    },
+    "version": "0.1",
+    "maintainer": "Peter Bittner <django@bittner.it>",
+    "framework": "ubuntu-sdk-15.04"
+}

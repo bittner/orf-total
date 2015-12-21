@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=ORF total
+Type=Application
+Icon=orf-total.png
+Exec=qmlscene %u qml/Main.qml
+Terminal=false
+X-Ubuntu-Touch=true
