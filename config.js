@@ -2,7 +2,7 @@
 var webappName = "orf-total"
 
 // the start url of your app (required)
-var webappUrl = "http://orf.at/"
+var webappUrl = "http://m.orf.at/"
 
 // the the pattern that defines which links are considered
 // local and which are opened in an external browser (required)
