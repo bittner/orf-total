@@ -164,7 +164,7 @@ MainView {
                     onTriggered: {
                         webview.url = "http://kundendienst.orf.at/"
                     }
-                    text: qsTr("Kontakt")
+                    text: qsTr("Service")
                 },
                 RadialAction {
                     id: tv
