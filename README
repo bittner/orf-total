@@ -1,39 +1,91 @@
-This is a new approach of an alternate webapp container that
-does not use a toolbar at the top but instead provides a bottom
-menu with navigation objects, similar to the one the dekko mail
-app uses. This way you do not have a jiggly toolbar that always
-expands and collapses in your app.
+ORF total
+---------
 
-To make use of this with your own webapp just follow the steps below.
+ORF total. The ultimate app for ORF. Austria's Radio, Television and
+News service. A WebApp for Ubuntu Touch.
 
-First of all branch this tree locally ...
+  Alle ORF Angebote in einer WebApp. Ö3, FM4, Radio, Fernsehen, News,
+  Kundendienst. Alle mobilen Angebote (News, Wetter, Ö3) und nicht-
+  mobile Anbote (Radio, Fernsehen, Kundendienst) in einer Web App.
 
-    bzr branch lp:~ogra/junk/alternate-webapp-container
+  HINWEISE:
+  - Nicht alle Angebote stellt der ORF mit einer mobilen Version zur
+  Verfügung. Wenn es für eines der Angebote eine Mobilversion gibt,
+  verlinken wir dorthin, sobald wir davon erfahren. (Bitte Issue auf
+  GitHub eröffnen!)
+  - Der Ö3 Radio Player ist beim ersten Starten manchmal zickig. Ein
+  Reload der Seite (über das bottom edge Menü) behebt das Problem in
+  der Regel.
+  - FM4 und andere Radiostationen findest Du unter "Radio". Leider
+  gibt es FM4 und die Stationenliste (noch) nicht als mobile Version.
+  Die Bundesländer Stationen ("Live hören") sind es aber schon.
+  - Die Musik hört zu spielen auf, sobald man das Smartphone verriegelt
+  oder die App wechselt. Das ist leider eine Einschränkung der Web Apps.
 
-== Building ==
+  TIPP: Mit der App "Active Screen" kann man das Ausschalten des
+  Bildschirms einfach verhindern.
 
-Edit the value of applicationName at the top of qml/Main.qml to match
-your application name to work around https://launchpad.net/bugs/1435778
+This web app is not affiliated with ORF, Oesterreichischer Rundfunk.
+The ORF name, associated trade marks and logos are trade marks of ORF
+or related entities.
 
-Edit config.js to add webappName, webappUrl and webappUrlPattern 
-similar to how you would use them as commandline options to webapp-container.
+Technical Notes
+---------------
 
-Optionally you can set the webappUA variable in config.js to override
-the User Agent string.
+This implementation is based on Oliver Grawert's alternate web app
+container [1], which provides a radial bottom edge menu instead of a
+top toolbar. The source code is ultimately a modified copy of Stefan
+Kalb's search.ch web app [2]. Thanks bunches both for your work!
 
-Edit app.desktop and manifest.json to your liking.
-Replace icon.png with your own icon.
+[1] https://ograblog.wordpress.com/2015/03/22/an-alternate-approach-to-ubuntu-phone-web-app-containers/
+[2] https://launchpad.net/search.ch-webapp
 
-Now run:
-    click build .
+License
+-------
 
-This will create a .click package with you webapp.
+ORF total Web App for Ubuntu Touch devices
+Copyright (C) 2015  Peter Bittner <django@bittner.it>
 
-== Installing ==
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-Push the click to your device via adb, then:
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
-    adb shell pkcon install-local --allow-untrusted /path/to/click
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-You will see a bunch of progress bars ... once they are done,
-pull down the app scope to refresh it and find your new app in there.
+Support
+-------
+
+Source code:
+- https://github.com/bittner/orf-total
+
+Issue tracker:
+- https://github.com/bittner/orf-total/issues
+
+Development
+-----------
+
+Ubuntu developer information on Webapps
+- https://developer.ubuntu.com/en/web/
+
+Introductory guide on Ubuntu Webapps
+- https://developer.ubuntu.com/en/web/ubuntu-webapps-guide/
+
+Ubuntu Webapps tutorials
+- https://developer.ubuntu.com/en/web/tutorials/
+
+Build and publish the .click package manually, without Ubuntu SDK:
+- Install `click` on your developer machine (`sudo apt-get install click`)
+- Make sure you have bumped the version number in `manifest.json`
+- `cd` into the project repo folder and build the package (`click build .`)
+- Upload the created .click file at https://myapps.developer.ubuntu.com
+
+Alternatively, local installation for testing on your device:
+- Push the .click package to your device (`adb push <local> <remote>`)
+- Install (`adb shell pkcon install-local --allow-untrusted /path/to/click`)
